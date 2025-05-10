@@ -1,7 +1,12 @@
-﻿  main.cpp
+﻿  Header.cpp
+C:\Users\andre\Documents\GitHub\SanchezJavier_CrespoAndrea_AA2_1\SanchezJavier_CrespoAndrea_AA2_1\Mathf.h(9,14): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Header.cpp")
+  
+  main.cpp
 C:\Users\andre\Documents\GitHub\SanchezJavier_CrespoAndrea_AA2_1\SanchezJavier_CrespoAndrea_AA2_1\Mathf.h(9,14): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
   (compilando archivo de origen "main.cpp")
   
 C:\Users\andre\Documents\GitHub\SanchezJavier_CrespoAndrea_AA2_1\SanchezJavier_CrespoAndrea_AA2_1\main.cpp(87,6): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
 C:\Users\andre\Documents\GitHub\SanchezJavier_CrespoAndrea_AA2_1\SanchezJavier_CrespoAndrea_AA2_1\main.cpp(89,18): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
   SanchezJavier_CrespoAndrea_AA2_1.vcxproj -> C:\Users\andre\Documents\GitHub\SanchezJavier_CrespoAndrea_AA2_1\x64\Debug\SanchezJavier_CrespoAndrea_AA2_1.exe

@@ -18,7 +18,7 @@ void NPCMovement(Map& map)
     for (int i = 0; i < pedestrianSFList.size(); i++)
     {
         int option = rand ( ) % 4;
-        if ( map.NextToPlayer ( pedestrianSFList [ i ] ) ) continue;
+        if ( map.NextToPlayer ( pedestrianSFList [ i ] ) || !pedestrianSFList[i].active) continue;
         Vector2 vector = pedestrianSFList [ i ].GetPosition ( );
         do
         {
@@ -52,7 +52,7 @@ void NPCMovement(Map& map)
     for (int i = 0; i < pedestrianLSList.size(); i++)
     {
         int option = rand ( ) % 4;
-        if ( map.NextToPlayer ( pedestrianLSList [ i ] ) ) continue;
+        if ( map.NextToPlayer ( pedestrianLSList [ i ] ) || !pedestrianLSList[i].active) continue;
         Vector2 vector = pedestrianLSList [i].GetPosition();
         do
         {
@@ -99,7 +99,7 @@ void main()
 	while (true)
 	{
 		//INPUTS
-        if ( GetAsyncKeyState ( VK_UP ) & 0x8000 )
+        if ( GetAsyncKeyState ( VK_UP ))
         {
             Vector2 newPos = { player.GetPosition().x, player.GetPosition ( ).y - 1 };
             if ( map.IsValidPosition ( newPos ) )
@@ -113,7 +113,7 @@ void main()
             NPCMovement(map);
         }
 
-        else if ( GetAsyncKeyState ( VK_DOWN ) & 0x8000 )
+        else if ( GetAsyncKeyState ( VK_DOWN ))
         {
             Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y + 1 };
             if ( map.IsValidPosition ( newPos ) )
@@ -127,7 +127,7 @@ void main()
             NPCMovement(map);
         }
 
-        else if ( GetAsyncKeyState ( VK_RIGHT ) & 0x8000 )
+        else if ( GetAsyncKeyState ( VK_RIGHT ))
         {
             Vector2 newPos = { player.GetPosition ( ).x + 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition ( newPos ) )
@@ -141,7 +141,7 @@ void main()
             NPCMovement(map);
         }
 
-        else if ( GetAsyncKeyState ( VK_LEFT ) & 0x8000 )
+        else if ( GetAsyncKeyState ( VK_LEFT ))
         {
             Vector2 newPos = { player.GetPosition ( ).x - 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition ( newPos ) )
@@ -170,8 +170,9 @@ void main()
                     p.SetActive(false);
                     
                     map.GetMap()[p.GetPosition().y][p.GetPosition().x] = EMPTY;
-                    //map.DrawMap();
+                    system("cls");
                     map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
+                    pedestrianSFList.erase(pedestrianSFList.begin() + i);
                     map.DrawFieldOfView(player);
                 }
             }
@@ -182,10 +183,10 @@ void main()
                 {
                     Pedestrian p = pedestrianLSList[i];
                     p.SetActive(false);
-
                     map.GetMap()[p.GetPosition().y][p.GetPosition().x] = EMPTY;
-                    //map.DrawMap();
+                    system("cls");
                     map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
+                    pedestrianLSList.erase(pedestrianLSList.begin() + i);
                     map.DrawFieldOfView(player);
                 }
             }

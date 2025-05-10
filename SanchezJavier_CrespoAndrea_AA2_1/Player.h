@@ -25,11 +25,11 @@ class Player
 {
 	char symbolShow;
 	Vector2 position;
+	int money;
 	//Vector2 GetPosition ( ) { return position; }
 public:
 	Player ( Vector2 _position )
 	{
-		symbolShow = ' ';
 		position = _position;
 	}
 

@@ -270,7 +270,6 @@ public:
 
     void SetPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & pedestrianList , int offset )
     {
-
         SpawnPedestrianToMap ( pedestrianAmount , pedestrianList , offset );
         for ( Pedestrian p : pedestrianList )
         {
@@ -280,9 +279,13 @@ public:
 
     bool IsValidPosition ( Vector2 targetPos )
     {
+        if (map[targetPos.y][targetPos.x] == MONEY)
+        {
+            GetMoney();
+        }
         return targetPos.y >= 0 && targetPos.y < height &&
             targetPos.x >= 0 && targetPos.x < width &&
-            map [ targetPos.y ][ targetPos.x ] == EMPTY;
+            (map [ targetPos.y ][ targetPos.x ] == EMPTY || map[targetPos.y][targetPos.x] == MONEY);
     }
     bool NextToPlayer ( Pedestrian& p) //Detectar a un jugador vecino
     {
