@@ -1,7 +1,6 @@
 #include <windows.h>
 #include "Player.h"
-#include "Header.h"
-void Player::Move( Vector2 newPos, Map & map )
+void Player::Move ( Vector2 newPos )
 {
-    position = IsValidPosition(position, map) ? newPos : position;
+    position = newPos;
 }

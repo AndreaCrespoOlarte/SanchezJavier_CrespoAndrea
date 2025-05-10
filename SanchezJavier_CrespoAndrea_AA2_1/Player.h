@@ -23,11 +23,21 @@ SIMBOLO PLAYER:
 */
 class Player
 {
+	char symbolShow;
 	Vector2 position;
 public: Vector2 GetPosition ( ) { return position; }
-public: Player(Vector2 _position)
+public: Player ( Vector2 _position )
 {
 	position = _position;
 }
-public: void Move(Vector2 newPos, Map& map);
+public:
+	void Move ( Vector2 newPos );
+	char GetSymbol ( )
+	{
+		return symbolShow;
+	}
+	void SetSymbol ( char symbol )
+	{
+		symbolShow = symbol;
+	}
 };

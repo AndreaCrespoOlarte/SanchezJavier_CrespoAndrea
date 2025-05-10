@@ -1,54 +1,93 @@
 ﻿#include <iostream>
 #include <Windows.h>
 #include "Map.h"
-#include "Header.h"
+
+void UpdateScreen ( Map & map , Player & player )
+{
+    system ( "cls" );
+    map.DrawFieldOfView ( player );
+}
 void main()
 {
 
 	//APLICAR GAMELOOP
-	Map map = Map(20,20);
-	Vector2 initialPos = { 0,0 };
-	Player player (initialPos);
-	map.GetMap ( ) [ initialPos.x ][ initialPos.y ] = PLAYER;
-	map.DrawMap ( );
-	map.DrawFieldOfView ( player );
+    Map map;
+    Vector2 initialPos = { 1, 1 };
+    Player player ( initialPos );
+    map.GetMap ( ) [ initialPos.y ][ initialPos.x ] = PLAYER;
+
+    system ( "cls" );
+    map.DrawAllMapVisuals ( );
 	//INITIALIZE
 	while (true)
 	{
 		//INPUTS
-        if (GetAsyncKeyState(VK_UP))
+        if ( GetAsyncKeyState ( VK_UP ) & 0x8000 )
         {
-            player.Move(Vector2{ player.GetPosition().x,player.GetPosition().y - 1 }, map);
-            map.DrawFieldOfView(player);
+            Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y - 1 };
+            if ( map.IsValidPosition ( newPos ) )
+            {
+                map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
+                player.Move ( newPos );
+                player.SetSymbol ( '^' );
+                map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
+                UpdateScreen ( map , player );
+            }
         }
-        if (GetAsyncKeyState(VK_DOWN))
+
+        else if ( GetAsyncKeyState ( VK_DOWN ) & 0x8000 )
         {
-            player.Move(Vector2{ player.GetPosition().x,player.GetPosition().y + 1 }, map);
-            map.DrawFieldOfView(player);
+            Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y + 1 };
+            if ( map.IsValidPosition ( newPos ) )
+            {
+                map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
+                player.Move ( newPos );
+                player.SetSymbol ( 'v' );
+                map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
+                UpdateScreen ( map , player );
+            }
         }
-        if (GetAsyncKeyState(VK_RIGHT))
+
+        else if ( GetAsyncKeyState ( VK_RIGHT ) & 0x8000 )
         {
-            player.Move(Vector2{ player.GetPosition().x + 1,player.GetPosition().y }, map);
-            map.DrawFieldOfView(player);
+            Vector2 newPos = { player.GetPosition ( ).x + 1, player.GetPosition ( ).y };
+            if ( map.IsValidPosition ( newPos ) )
+            {
+                map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
+                player.Move ( newPos );
+                player.SetSymbol ( '>' );
+                map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
+                UpdateScreen ( map , player );
+            }
         }
-        if (GetAsyncKeyState(VK_LEFT))
+
+        else if ( GetAsyncKeyState ( VK_LEFT ) & 0x8000 )
         {
-            player.Move(Vector2{ player.GetPosition().x,player.GetPosition().y }, map);
-            map.DrawFieldOfView(player);
+            Vector2 newPos = { player.GetPosition ( ).x - 1, player.GetPosition ( ).y };
+            if ( map.IsValidPosition ( newPos ) )
+            {
+                map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
+                player.Move ( newPos );
+                player.SetSymbol ( '<' );
+                map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
+                UpdateScreen ( map , player );
+            }
         }
-        else if (GetAsyncKeyState(VK_SPACE))
+
+        else if ( GetAsyncKeyState ( VK_SPACE ) )
         {
             //Attack
         }
-        else if (GetAsyncKeyState(VK_ESCAPE))
+        else if ( GetAsyncKeyState ( VK_ESCAPE ) )
         {
             //Exit game
+            break;
         }
 
 		//Usar GetAsyncKeyState(const);
 		//RENDER
 
 		//FRAMERATE
-		//Usar Sleep();
+        Sleep ( 60 );
 	}
 }

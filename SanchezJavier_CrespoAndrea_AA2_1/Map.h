@@ -22,11 +22,13 @@ El mapa constará de 3 partes horizontales:
 SIMBOLOS:
 Paredes = X
 */
-
+#define FOV_X 20
+#define FOV_Y 20
 enum MapEntities
 {
     WALL = 1 ,
     EMPTY ,
+    TAXES ,
     PLAYER ,
     PEDESTRIAN ,
     CAR ,
@@ -37,20 +39,17 @@ class Map
 {
     const char WALL_SYMBOL = 'X';
     const char EMPTY_SYMBOL = ' ';
-    const char PLAYER_SYMBOL = 'P';
     const char PEDESTRIAN_SYMBOL = 'P';
     const char CAR_SYMBOL = 'C';
     const char BIG_SMOKE_SYMBOL = 'B';
 
-    MapEntities** map;
+    MapEntities ** map = nullptr;
     std::vector<Pedestrian> pedestrianSFList;
     std::vector<Pedestrian> pedestrianLSList;
 
     int width = 0;
 
     int height = 0;
-    int fieldOfViewX;
-    int fieldOfViewY;
 
     int pedestrianSF_Amount;
     int moneyTaxFor_SanFierro;
@@ -61,26 +60,20 @@ class Map
     int moneyPerKill_LasVenturas;
 
 public:
-    MapEntities** GetMap ( ) { return map; }
+    MapEntities ** GetMap ( ) { return map; }
     int GetWidth ( ) { return width; }
     int GetHeight ( ) { return height; }
     std::vector<Pedestrian> GetPedestrianSFList ( ) { return pedestrianSFList; }
     std::vector<Pedestrian> GetPedestrianLSList ( ) { return pedestrianLSList; }
 
-    Map ( float fovX , float fovY )
+    Map ( )
     {
-        fieldOfViewX = fovX;
-        fieldOfViewY = fovY;
         ReadFile ( );
-        DrawMap ( );
-        SetPedestrianToMap ( pedestrianSF_Amount , pedestrianSFList , width / 3 );
-        SetPedestrianToMap ( pedestrianLS_Amount , pedestrianLSList , width / 2 + 15 );
         if ( width > 0 && height > 0 )
         {
             InitializeMap ( );
         }
     }
-
 private:
 
     void ReadFile ( )
@@ -117,15 +110,21 @@ private:
 
     void InitializeMap ( )
     {
-        for ( int i = 0; i < height; i++ )
+        map = new MapEntities * [ height ];
+
+        for ( int y = 0; y < height; ++y )
         {
-            for ( int j = 0; j < width; j++ )
+            map [ y ] = new MapEntities [ width ];
+            for ( int x = 0; x < width; ++x )
             {
-                map [ i ][ j ] = EMPTY;
+                map [ y ][ x ] = EMPTY;
             }
         }
-    }
 
+        DrawMap ( );
+        SetPedestrianToMap ( pedestrianSF_Amount , pedestrianSFList , width / 3 );
+        SetPedestrianToMap ( pedestrianLS_Amount , pedestrianLSList , width / 2 + 15 );
+    }
 public:
 
     void DrawMap ( )
@@ -134,82 +133,97 @@ public:
 
         int zoneWidth = width / 3;
 
-        for ( int i = 0; i < width; i++ )
+        for ( int y = 0; y < height; ++y )
         {
-            for ( int j = 0; j < height; j++ ) 
+            for ( int x = 0; x < width; ++x )
             {
-                if ( i == 0 || j == 0 || i == width - 1 || j == height - 1 )
+                if ( y == 0 || x == 0 || y == height - 1 || x == width - 1 )
                 {
-                    map [ i ][ j ] = WALL;
+                    map [ y ][ x ] = WALL;
                 }
-                else if ( i == zoneWidth || i == 2 * zoneWidth )
+                else if ( x == zoneWidth || x == 2 * zoneWidth )
                 {
-                    if ( j >= ( height / 2 ) - 2 && j <= ( height / 2 ) + 2 )
+                    if ( y >= ( height / 2 ) - 2 && y <= ( height / 2 ) + 2 )
                     {
-                        map [ i ][ j ] = EMPTY;
+                        map [ y ][ x ] = TAXES;
                     }
                     else
                     {
-                        map [ i ][ j ] = WALL;
+                        map [ y ][ x ] = WALL;
                     }
                 }
                 else
                 {
-                    map [ i ][ j ] = EMPTY;
+                    map [ y ][ x ] = EMPTY;
                 }
             }
         }
     }
-    void DrawAllMapVisuals ( ) //Used for testing all map features
+    void DrawAllMapVisuals ( )
     {
         if ( width == 0 || height == 0 ) return;
-        for ( int j = 0; j < height; j++ ) // filas
+
+        for ( int y = 0; y < height; ++y )
         {
-            for ( int i = 0; i < width; i++ ) // columnas
+            for ( int x = 0; x < width; ++x )
             {
-                switch ( map [ i ][ j ] )
+                switch ( map [ y ][ x ] )
                 {
                     case WALL: std::cout << WALL_SYMBOL; break;
                     case EMPTY: std::cout << EMPTY_SYMBOL; break;
-                    case PLAYER: std::cout << PLAYER_SYMBOL; break;
+                    case TAXES: std::cout << EMPTY_SYMBOL; break;
+                    case PLAYER: std::cout << '^'; break;
                     case PEDESTRIAN: std::cout << PEDESTRIAN_SYMBOL; break;
                     case CAR: std::cout << CAR_SYMBOL; break;
                     case BIG_SMOKE: std::cout << BIG_SMOKE_SYMBOL; break;
+                    default: std::cout << '?'; break;
                 }
             }
             std::cout << '\n';
         }
     }
-
-    void DrawFieldOfView ( Player player ) //FOV playable
+    void DrawFieldOfView ( Player player )
     {
         Vector2 pos = player.GetPosition ( );
-        int _width = Mathf::f_Distance ( pos.x , fieldOfViewX );
-        int _height = Mathf::f_Distance ( pos.y , fieldOfViewY );
-        DrawMapVisuals ( _width , _height );
+
+        int minX = pos.x - FOV_X;
+        int maxX = pos.x + FOV_X;
+
+        int minY = pos.y - FOV_Y;
+        int maxY = pos.y + FOV_Y;
+        DrawMapVisuals ( minX , maxX , minY , maxY , player );
     }
 
-    void DrawMapVisuals ( int _width , int _height )
+    void DrawMapVisuals ( int minX , int maxX , int minY , int maxY , Player player )
     {
-        for ( int j = 0; j < _height; j++ )
+        for ( int y = minY; y <= maxY; ++y )
         {
-            for ( int i = 0; i < _width; i++ )
+            if ( y < 0 || y >= height ) continue;
+
+            for ( int x = minX; x <= maxX; ++x )
             {
-                switch ( map [ i ][ j ] )
+                if ( x < 0 || x >= width )
+                {
+                    std::cout << ' ';
+                    continue;
+                }
+
+                switch ( map [ y ][ x ] )
                 {
                     case WALL: std::cout << WALL_SYMBOL; break;
                     case EMPTY: std::cout << EMPTY_SYMBOL; break;
-                    case PLAYER: std::cout << PLAYER_SYMBOL; break;
+                    case PLAYER: std::cout << player.GetSymbol ( ); break;
                     case PEDESTRIAN: std::cout << PEDESTRIAN_SYMBOL; break;
                     case CAR: std::cout << CAR_SYMBOL; break;
                     case BIG_SMOKE: std::cout << BIG_SMOKE_SYMBOL; break;
+                    default: std::cout << '?'; break;
                 }
             }
+
             std::cout << '\n';
         }
     }
-
-    void SpawnPedestrianToMap ( int pedestrianAmount,std::vector<Pedestrian>& list, int offset )
+    void SpawnPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & list , int offset )
     {
         int randX = 0;
         int randY = 0;
@@ -219,14 +233,14 @@ public:
             Vector2 pos;
             do
             {
-                randX = rand ( ) % ( width - offset ) + 1;
-                randY = rand ( ) % ( height - 2 ) + 1;
+                randX = rand ( ) % ( height - 2 ) + 1;
+                randY = rand ( ) % ( width - offset ) + 1;
                 pos = { randX, randY };
 
                 if ( map [ randX ][ randY ] != EMPTY )
                 {
                     return;
-                        
+
                 }
                 for ( Pedestrian pedestrian : list )
                 {
@@ -244,13 +258,18 @@ public:
             i++;
         }
     }
-    void SetPedestrianToMap ( int pedestrianAmount, std::vector<Pedestrian>& pedestrianList, int offset )
+    void SetPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & pedestrianList , int offset )
     {
 
-        SpawnPedestrianToMap ( pedestrianAmount , pedestrianList, offset );
-        for ( Pedestrian p : pedestrianList)
+        SpawnPedestrianToMap ( pedestrianAmount , pedestrianList , offset );
+        for ( Pedestrian p : pedestrianList )
         {
             map [ p.GetPosition ( ).x ][ p.GetPosition ( ).y ] = PEDESTRIAN;
         }
+    }
+
+    bool IsValidPosition ( Vector2 targetPos )
+    {
+        return map [ targetPos.y ][ targetPos.x ] == EMPTY;
     }
 };

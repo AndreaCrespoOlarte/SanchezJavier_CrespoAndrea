@@ -21,29 +21,30 @@ SIMBOLO
 */
 class Pedestrian
 {
-private: 
+private:
 	Vector2 position;
 	bool active;
-public: 
-	Vector2 GetPosition()
+public:
+	Vector2 GetPosition ( )
 	{
 		return position;
 	}
-	void SetPosition(int x, int y)
+	void SetPosition ( int x , int y )
 	{
 		position.x = x;
 		position.y = y;
 	}
 
-	bool GetActive() 
+	bool GetActive ( )
 	{
 		return active;
 	}
-	void SetActive(bool isActived)
+	void SetActive ( bool isActived )
 	{
 		active = isActived;
 	}
-	Pedestrian(Vector2 _position) : position(_position), active(true) {}
-	void Move( Map & map );
-	bool CheckColision(); //Detector de colisiones Devuelve "true" o "false";
+	Pedestrian ( Vector2 _position ) : position ( _position ) , active ( true ) { }
+	void Move ( Vector2 newPos );
+	bool CheckColision ( ); //Detector de colisiones Devuelve "true" o "false";
+
 };

@@ -8,10 +8,6 @@ struct Mathf
 	{
 		return sqrt(pow(b.x - a.x, 2) + pow(b.y - a.y, 2));
 	}
-	static float f_Distance(float a, float b)
-	{
-		return b > a ? b - a: a - b;
-	}
 
 	static bool DetectedCollisionAt ( const Vector2& a, const Vector2& b )
 	{
