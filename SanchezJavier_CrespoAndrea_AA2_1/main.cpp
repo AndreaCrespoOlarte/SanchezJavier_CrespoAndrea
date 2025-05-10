@@ -6,6 +6,7 @@ void UpdateScreen ( Map & map , Player & player )
 {
     system ( "cls" );
     map.DrawFieldOfView ( player );
+    std::cout << "Money: " << player.GetMoney() << std::endl;
 }
 
 void NPCMovement(Map& map)
@@ -102,7 +103,7 @@ void main()
         if ( GetAsyncKeyState ( VK_UP ))
         {
             Vector2 newPos = { player.GetPosition().x, player.GetPosition ( ).y - 1 };
-            if ( map.IsValidPosition ( newPos ) )
+            if ( map.IsValidPosition ( newPos, &player ) )
             {
                 map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
                 player.Move ( newPos );
@@ -116,7 +117,7 @@ void main()
         else if ( GetAsyncKeyState ( VK_DOWN ))
         {
             Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y + 1 };
-            if ( map.IsValidPosition ( newPos ) )
+            if ( map.IsValidPosition(newPos, &player))
             {
                 map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
                 player.Move ( newPos );
@@ -130,7 +131,7 @@ void main()
         else if ( GetAsyncKeyState ( VK_RIGHT ))
         {
             Vector2 newPos = { player.GetPosition ( ).x + 1, player.GetPosition ( ).y };
-            if ( map.IsValidPosition ( newPos ) )
+            if ( map.IsValidPosition(newPos, &player))
             {
                 map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
                 player.Move ( newPos );
@@ -144,7 +145,7 @@ void main()
         else if ( GetAsyncKeyState ( VK_LEFT ))
         {
             Vector2 newPos = { player.GetPosition ( ).x - 1, player.GetPosition ( ).y };
-            if ( map.IsValidPosition ( newPos ) )
+            if ( map.IsValidPosition(newPos, &player))
             {
                 map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
                 player.Move ( newPos );
@@ -173,10 +174,10 @@ void main()
                     system("cls");
                     map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
                     pedestrianSFList.erase(pedestrianSFList.begin() + i);
-                    map.DrawFieldOfView(player);
+                    UpdateScreen(map, player);
                 }
             }
-
+            
             for (int i = 0; i < pedestrianLSList.size(); i++)
             {
                 if (map.NextToPlayer(pedestrianLSList[i]))
@@ -187,7 +188,7 @@ void main()
                     system("cls");
                     map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
                     pedestrianLSList.erase(pedestrianLSList.begin() + i);
-                    map.DrawFieldOfView(player);
+                    UpdateScreen(map, player);
                 }
             }
         }
@@ -197,7 +198,7 @@ void main()
         }
 
 		//RENDER
-
+        
 		//FRAMERATE
         Sleep ( 60 );
 	}

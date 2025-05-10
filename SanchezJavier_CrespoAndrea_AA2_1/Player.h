@@ -28,9 +28,10 @@ class Player
 	int money;
 	//Vector2 GetPosition ( ) { return position; }
 public:
-	Player ( Vector2 _position )
+	Player ( Vector2 _position)
 	{
 		position = _position;
+		money = 0;
 	}
 
 	Vector2 GetPosition() const {
@@ -46,8 +47,13 @@ public:
 	{
 		symbolShow = symbol;
 	}
-	void SetMoney ( int newMoney)
+	int GetMoney()
 	{
-		money = newMoney;
+		return money;
+	}
+	
+	void AddMoney (int newMoney)
+	{
+		money += newMoney;
 	}
 };

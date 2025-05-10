@@ -23,6 +23,7 @@ class Pedestrian
 {
 private:
 	Vector2 position;
+	int money;
 	
 public:
 	bool active;
@@ -44,7 +45,7 @@ public:
 	{
 		active = isActived;
 	}
-	Pedestrian ( Vector2 _position ) : position ( _position ) , active ( true ) { }
+	Pedestrian ( Vector2 _position, int _money ) : position ( _position ) , active ( true ), money (_money) { }
 	void Move ( Vector2 newPos );
 	bool CheckColision ( ); //Detector de colisiones Devuelve "true" o "false";
 
