@@ -63,8 +63,8 @@ public:
     MapEntities ** GetMap ( ) { return map; }
     int GetWidth ( ) { return width; }
     int GetHeight ( ) { return height; }
-    std::vector<Pedestrian> GetPedestrianSFList ( ) { return pedestrianSFList; }
-    std::vector<Pedestrian> GetPedestrianLSList ( ) { return pedestrianLSList; }
+    std::vector<Pedestrian>& GetPedestrianSFList ( ) { return pedestrianSFList; }
+    std::vector<Pedestrian>& GetPedestrianLSList ( ) { return pedestrianLSList; }
 
     Map ( )
     {
@@ -270,6 +270,22 @@ public:
 
     bool IsValidPosition ( Vector2 targetPos )
     {
-        return map [ targetPos.y ][ targetPos.x ] == EMPTY;
+        return targetPos.y >= 0 && targetPos.y < height &&
+            targetPos.x >= 0 && targetPos.x < width &&
+            map [ targetPos.y ][ targetPos.x ] == EMPTY;
+    }
+    bool NextToPlayer ( Pedestrian& p) //Detectar a un jugador vecino
+    {
+        int x = p.GetPosition ( ).x;
+        int y = p.GetPosition ( ).y;
+
+        if ( y < 0 || y >= height || x < 0 || x >= width )
+            return false;
+
+        if ( x + 1 < width && map [ y ][ x + 1 ] == PLAYER ) return true;
+        if ( x - 1 >= 0 && map [ y ][ x - 1 ] == PLAYER ) return true;
+        if ( y - 1 >= 0 && map [ y - 1 ][ x ] == PLAYER ) return true;
+        if ( y + 1 < height && map [ y + 1 ][ x ] == PLAYER ) return true;
+        return false;
     }
 };

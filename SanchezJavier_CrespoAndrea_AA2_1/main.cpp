@@ -8,13 +8,17 @@ void UpdateScreen ( Map & map , Player & player )
     map.DrawFieldOfView ( player );
 }
 
-void NPCMovement(Map map)
+void NPCMovement(Map& map)
 {
-    int option = rand() % 4;
-    
-    for (int i = 0; i < map.GetPedestrianSFList().size() - 1; i++)
+    std::vector<Pedestrian> & pedestrianSFList = map.GetPedestrianSFList ( );
+    std::vector<Pedestrian> & pedestrianLSList = map.GetPedestrianLSList ( );
+
+    if ( pedestrianSFList.empty ( ) || pedestrianLSList.empty ( ) ) return;
+    for (int i = 0; i < pedestrianSFList.size(); i++)
     {
-        Vector2 vector = map.GetPedestrianSFList()[i].GetPosition();
+        int option = rand ( ) % 4;
+        if ( map.NextToPlayer ( pedestrianSFList [ i ] ) ) continue;
+        Vector2 vector = pedestrianSFList [ i ].GetPosition ( );
         do
         {
             switch (option)
@@ -34,13 +38,21 @@ void NPCMovement(Map map)
             default:
                 break;
             }
-        } while (!map.IsValidPosition(vector) && vector != map.GetPedestrianSFList()[i].GetPosition());
-        map.GetPedestrianSFList()[i].SetPosition(vector.x,vector.y);
+        } while (!map.IsValidPosition(vector) && vector != pedestrianSFList [i].GetPosition());
+        if ( vector.y < 1 || vector.y >= map.GetHeight ( ) || vector.x < 1 || vector.x >= map.GetWidth ( ) )
+        {
+            continue;
+        }
+        map.GetMap ( ) [ pedestrianSFList [ i ].GetPosition ( ).y ][ pedestrianSFList [ i ].GetPosition ( ).x ] = EMPTY;
+        pedestrianSFList [ i ].SetPosition ( vector.x , vector.y );
+        map.GetMap ( ) [ vector.y ][ vector.x ] = PEDESTRIAN;
     }
 
-    for (int i = 0; i < map.GetPedestrianLSList().size() - 1; i++)
+    for (int i = 0; i < pedestrianLSList.size(); i++)
     {
-        Vector2 vector = map.GetPedestrianLSList()[i].GetPosition();
+        int option = rand ( ) % 4;
+        if ( map.NextToPlayer ( pedestrianLSList [ i ] ) ) continue;
+        Vector2 vector = pedestrianLSList [i].GetPosition();
         do
         {
             switch (option)
@@ -60,14 +72,20 @@ void NPCMovement(Map map)
             default:
                 break;
             }
-        } while (!map.IsValidPosition(vector) && vector != map.GetPedestrianLSList()[i].GetPosition());
-        map.GetPedestrianLSList()[i].SetPosition(vector.x, vector.y);
+        } while (!map.IsValidPosition(vector) && vector != pedestrianLSList [i].GetPosition());
+        if ( vector.y < 1 || vector.y >= map.GetHeight ( ) || vector.x < 1 || vector.x >= map.GetWidth ( ) )
+        {
+            continue;
+        }
+        map.GetMap ( ) [ pedestrianLSList [ i ].GetPosition().y ][ pedestrianLSList [ i ].GetPosition ( ).x ] = EMPTY;
+        pedestrianLSList [i].SetPosition(vector.x, vector.y);
+        map.GetMap ( ) [ vector.y ][ vector.x ] = PEDESTRIAN;
     }
 }
 
 void main()
 {
-
+    srand ( time ( NULL ) );
 	//APLICAR GAMELOOP
     Map map;
     Vector2 initialPos = { 1, 1 };
@@ -82,7 +100,6 @@ void main()
 		//INPUTS
         if ( GetAsyncKeyState ( VK_UP ) & 0x8000 )
         {
-            NPCMovement(map);
             Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y - 1 };
             if ( map.IsValidPosition ( newPos ) )
             {
@@ -92,11 +109,11 @@ void main()
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
                 UpdateScreen ( map , player );
             }
+            NPCMovement(map);
         }
 
         else if ( GetAsyncKeyState ( VK_DOWN ) & 0x8000 )
         {
-            NPCMovement(map);
             Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y + 1 };
             if ( map.IsValidPosition ( newPos ) )
             {
@@ -106,11 +123,11 @@ void main()
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
                 UpdateScreen ( map , player );
             }
+            NPCMovement(map);
         }
 
         else if ( GetAsyncKeyState ( VK_RIGHT ) & 0x8000 )
         {
-            NPCMovement(map);
             Vector2 newPos = { player.GetPosition ( ).x + 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition ( newPos ) )
             {
@@ -120,11 +137,11 @@ void main()
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
                 UpdateScreen ( map , player );
             }
+            NPCMovement(map);
         }
 
         else if ( GetAsyncKeyState ( VK_LEFT ) & 0x8000 )
         {
-            NPCMovement(map);
             Vector2 newPos = { player.GetPosition ( ).x - 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition ( newPos ) )
             {
@@ -134,6 +151,7 @@ void main()
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
                 UpdateScreen ( map , player );
             }
+            NPCMovement(map);
         }
 
         else if ( GetAsyncKeyState ( VK_SPACE ) )
