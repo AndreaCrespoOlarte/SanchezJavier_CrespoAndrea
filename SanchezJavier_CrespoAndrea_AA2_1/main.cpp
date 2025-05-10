@@ -166,8 +166,13 @@ void main()
             {
                 if (map.NextToPlayer(pedestrianSFList[i]))
                 {
-                    pedestrianSFList[i].active = false;
-                    map.ErasePedestrianOfMap(pedestrianSFList[i].GetPosition().x, pedestrianSFList[i].GetPosition().y);
+                    Pedestrian p = pedestrianSFList[i];
+                    p.SetActive(false);
+                    
+                    map.GetMap()[p.GetPosition().y][p.GetPosition().x] = EMPTY;
+                    //map.DrawMap();
+                    map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
+                    map.DrawFieldOfView(player);
                 }
             }
 
@@ -175,8 +180,13 @@ void main()
             {
                 if (map.NextToPlayer(pedestrianLSList[i]))
                 {
-                    pedestrianLSList[i].active = false;
-                    map.ErasePedestrianOfMap(pedestrianLSList[i].GetPosition().x, pedestrianLSList[i].GetPosition().y);
+                    Pedestrian p = pedestrianLSList[i];
+                    p.SetActive(false);
+
+                    map.GetMap()[p.GetPosition().y][p.GetPosition().x] = EMPTY;
+                    //map.DrawMap();
+                    map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
+                    map.DrawFieldOfView(player);
                 }
             }
         }
@@ -185,7 +195,6 @@ void main()
             break;
         }
 
-		//Usar GetAsyncKeyState(const);
 		//RENDER
 
 		//FRAMERATE

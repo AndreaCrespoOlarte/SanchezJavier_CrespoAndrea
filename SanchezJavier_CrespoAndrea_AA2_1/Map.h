@@ -263,7 +263,7 @@ public:
         }
     }
     
-    void ErasePedestrianOfMap(int x, int y)
+    void PedestrianToMoney(int x, int y)
     {
         map[x][y] = MONEY;
     }
