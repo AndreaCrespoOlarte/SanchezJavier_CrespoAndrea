@@ -48,5 +48,9 @@ public:
 	Pedestrian ( Vector2 _position, int _money ) : position ( _position ) , active ( true ), money (_money) { }
 	void Move ( Vector2 newPos );
 	bool CheckColision ( ); //Detector de colisiones Devuelve "true" o "false";
+	int GetMoney ( )
+	{
+		return money;
+	}
 
 };

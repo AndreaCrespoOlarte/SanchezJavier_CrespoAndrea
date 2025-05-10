@@ -124,8 +124,8 @@ private:
         }
 
         DrawMap ( );
-        SetPedestrianToMap ( pedestrianSF_Amount , pedestrianSFList , width / 2 + 15, false);
         SetPedestrianToMap ( pedestrianLS_Amount , pedestrianLSList , width / 3, true);
+        SetPedestrianToMap ( pedestrianSF_Amount , pedestrianSFList , width / 2 + 15, false);
     }
 public:
 
@@ -179,11 +179,12 @@ public:
                     case CAR: std::cout << CAR_SYMBOL; break;
                     case BIG_SMOKE: std::cout << BIG_SMOKE_SYMBOL; break;
                     case MONEY: std::cout << MONEY_SYMBOL; break;
-                    default: std::cout << '?'; break;
+                    default: std::cout << EMPTY_SYMBOL; break;
                 }
             }
             std::cout << '\n';
         }
+        std::cout << '\t' << '\t' << "Los_Santos" << '\t' << '\t' << '\t' << '\t' << '\t' << '\t' << "San_Fierro" << '\t' << '\t' << '\t' << '\t' << '\t' << '\t' << "Las_Venturas";
     }
     void DrawFieldOfView ( Player player )
     {
@@ -215,6 +216,7 @@ public:
                 {
                     case WALL: std::cout << WALL_SYMBOL; break;
                     case EMPTY: std::cout << EMPTY_SYMBOL; break;
+                    case TAXES: std::cout << EMPTY_SYMBOL; break;
                     case PLAYER: std::cout << player.GetSymbol ( ); break;
                     case PEDESTRIAN: std::cout << PEDESTRIAN_SYMBOL; break;
                     case CAR: std::cout << CAR_SYMBOL; break;
@@ -227,26 +229,47 @@ public:
             std::cout << '\n';
         }
     }
-    void SpawnPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & list , int offset, bool LSpedestrian )
+    void SpawnPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & list , int offset , bool LSpedestrian )
     {
         int randX = 0;
         int randY = 0;
-        
+
+        // Divisiones del mapa en 3 partes
+        int zoneWidth = width / 3;
+        int xMin = 0;
+        int xMax = 0;
+
+        if ( LSpedestrian )
+        {
+            xMin = 1;
+            xMax = zoneWidth - 2;
+        }
+        else
+        {
+            xMin = zoneWidth + 1;
+            xMax = 2 * zoneWidth - 2;
+        }
+
         for ( int i = 0; i < pedestrianAmount;)
         {
+            int pdMoney = LSpedestrian
+                ? ( rand ( ) % ( moneyPerKill_LosSantos - 1 ) ) + 1
+                : ( rand ( ) % ( moneyPerKill_SanFierro - 1 ) ) + 1;
+
             bool occupied = false;
             Vector2 pos;
             do
             {
-                randX = rand ( ) % ( height - 2 ) + 1;
-                randY = rand ( ) % ( width - offset ) + 1;
+                randY = rand ( ) % ( height - 2 ) + 1; // y entre 1 y height-2
+                randX = rand ( ) % ( xMax - xMin + 1 ) + xMin; // x entre xMin y xMax
                 pos = { randX, randY };
 
-                if ( map [ randX ][ randY ] != EMPTY )
+                if ( map [ randY ][ randX ] != EMPTY )
                 {
-                    return;
-
+                    occupied = true;
+                    continue;
                 }
+
                 for ( Pedestrian pedestrian : list )
                 {
                     if ( pos == pedestrian.GetPosition ( ) )
@@ -255,37 +278,60 @@ public:
                         break;
                     }
                 }
+
             }
             while ( occupied );
-            
-            Pedestrian pedestrian = LSpedestrian ? Pedestrian { pos , (rand()%(moneyPerKill_LosSantos - 1) + 1)} : 
-                Pedestrian{ pos , (rand() % (moneyPerKill_SanFierro - 1) + 1)};
+
+            Pedestrian pedestrian { pos, pdMoney };
             list.push_back ( pedestrian );
             i++;
         }
     }
-    
     void SetPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & pedestrianList , int offset , bool LSpedestrian)
     {
         SpawnPedestrianToMap ( pedestrianAmount , pedestrianList , offset , LSpedestrian);
         for ( Pedestrian p : pedestrianList )
         {
-            map [ p.GetPosition ( ).x ][ p.GetPosition ( ).y ] = PEDESTRIAN;
+            map [ p.GetPosition ( ).y ][ p.GetPosition ( ).x ] = PEDESTRIAN;
         }
     }
-
-    bool IsValidPosition ( Vector2 targetPos, Player* player = nullptr )
+    bool IsValidPosition ( Vector2 targetPos , Player * player = nullptr )
     {
-        bool inLimits = targetPos.y >= 0 && targetPos.y < height && targetPos.x >= 0 && targetPos.x < width;
-        if ( !inLimits ) return false;
-        if (map[targetPos.y][targetPos.x] == MONEY)
+        if ( targetPos.y < 0 || targetPos.y >= height - 1 || targetPos.x < 0 || targetPos.x >= width - 1)
         {
-            if ( player != nullptr ) player->AddMoney ( moneyPerKill_LosSantos);
-            map [ targetPos.y ][ targetPos.x ] == EMPTY;
+            return false;
         }
-        return map [ targetPos.y ][ targetPos.x ] == EMPTY || map[targetPos.y][targetPos.x] == MONEY;
-    }
+        if ( map == nullptr )
+        {
+            return false;
+        }
 
+        if ( map [ targetPos.y ][ targetPos.x ] != EMPTY && map [ targetPos.y ][ targetPos.x ] != MONEY && map [ targetPos.y ][ targetPos.x ] )
+        {
+            return false;
+        }
+
+        if ( map [ targetPos.y ][ targetPos.x ] == MONEY )
+        {
+            if ( player != nullptr )
+            {
+                int reward = ( rand ( ) % ( moneyPerKill_LosSantos - 1 ) ) + 1;
+                player->AddMoney ( reward );
+            }
+            map [ targetPos.y ][ targetPos.x ] = EMPTY;
+        }
+        if ( map [ targetPos.y ][ targetPos.x ] == TAXES )
+        {
+            if ( player != nullptr )
+            {
+                int reward = ( rand ( ) % ( moneyPerKill_LosSantos - 1 ) ) + 1;
+                player->AddMoney ( reward );
+            }
+            map [ targetPos.y ][ targetPos.x ] = EMPTY;
+        }
+
+        return true;
+    }
     bool NextToPlayer ( Pedestrian& p) //Detectar a un jugador vecino
     {
         int x = p.GetPosition ( ).x;
