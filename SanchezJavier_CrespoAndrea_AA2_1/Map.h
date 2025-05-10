@@ -32,7 +32,8 @@ enum MapEntities
     PLAYER ,
     PEDESTRIAN ,
     CAR ,
-    BIG_SMOKE
+    BIG_SMOKE ,
+    MONEY
 };
 
 class Map
@@ -42,6 +43,7 @@ class Map
     const char PEDESTRIAN_SYMBOL = 'P';
     const char CAR_SYMBOL = 'C';
     const char BIG_SMOKE_SYMBOL = 'B';
+    const char MONEY_SYMBOL = '$';
 
     MapEntities ** map = nullptr;
     std::vector<Pedestrian> pedestrianSFList;
@@ -176,6 +178,7 @@ public:
                     case PEDESTRIAN: std::cout << PEDESTRIAN_SYMBOL; break;
                     case CAR: std::cout << CAR_SYMBOL; break;
                     case BIG_SMOKE: std::cout << BIG_SMOKE_SYMBOL; break;
+                    case MONEY: std::cout << MONEY_SYMBOL; break;
                     default: std::cout << '?'; break;
                 }
             }
@@ -184,7 +187,7 @@ public:
     }
     void DrawFieldOfView ( Player player )
     {
-        Vector2 pos = player.GetPosition ( );
+        Vector2 pos = player.GetPosition( );
 
         int minX = pos.x - FOV_X;
         int maxX = pos.x + FOV_X;
@@ -216,6 +219,7 @@ public:
                     case PEDESTRIAN: std::cout << PEDESTRIAN_SYMBOL; break;
                     case CAR: std::cout << CAR_SYMBOL; break;
                     case BIG_SMOKE: std::cout << BIG_SMOKE_SYMBOL; break;
+                    case MONEY: std::cout << MONEY_SYMBOL; break;
                     default: std::cout << '?'; break;
                 }
             }
@@ -258,6 +262,12 @@ public:
             i++;
         }
     }
+    
+    void ErasePedestrianOfMap(int x, int y)
+    {
+        map[x][y] = MONEY;
+    }
+
     void SetPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & pedestrianList , int offset )
     {
 
@@ -286,6 +296,11 @@ public:
         if ( x - 1 >= 0 && map [ y ][ x - 1 ] == PLAYER ) return true;
         if ( y - 1 >= 0 && map [ y - 1 ][ x ] == PLAYER ) return true;
         if ( y + 1 < height && map [ y + 1 ][ x ] == PLAYER ) return true;
+        //Checker de adyacencia diagonal
+        if (y + 1 < height && x + 1 < width && map[y + 1][x + 1] == PLAYER) return true;
+        if (y + 1 < height && x - 1 >= 0 && map[y + 1][x - 1] == PLAYER) return true;
+        if (y - 1 >= 0 && x + 1 < width && map[y - 1][x + 1] == PLAYER) return true;
+        if (y - 1 < height && x - 1 >= 0 && map[y - 1][x - 1] == PLAYER) return true;
         return false;
     }
 };

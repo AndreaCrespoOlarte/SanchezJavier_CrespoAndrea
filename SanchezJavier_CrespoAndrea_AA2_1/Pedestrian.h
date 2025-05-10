@@ -23,8 +23,9 @@ class Pedestrian
 {
 private:
 	Vector2 position;
-	bool active;
+	
 public:
+	bool active;
 	Vector2 GetPosition ( )
 	{
 		return position;

@@ -25,13 +25,19 @@ class Player
 {
 	char symbolShow;
 	Vector2 position;
-public: Vector2 GetPosition ( ) { return position; }
-public: Player ( Vector2 _position )
-{
-	position = _position;
-}
+	//Vector2 GetPosition ( ) { return position; }
 public:
+	Player ( Vector2 _position )
+	{
+		symbolShow = ' ';
+		position = _position;
+	}
+
+	Vector2 GetPosition() const {
+		return position;
+	}
 	void Move ( Vector2 newPos );
+
 	char GetSymbol ( )
 	{
 		return symbolShow;

@@ -14,6 +14,7 @@ void NPCMovement(Map& map)
     std::vector<Pedestrian> & pedestrianLSList = map.GetPedestrianLSList ( );
 
     if ( pedestrianSFList.empty ( ) || pedestrianLSList.empty ( ) ) return;
+
     for (int i = 0; i < pedestrianSFList.size(); i++)
     {
         int option = rand ( ) % 4;
@@ -92,7 +93,7 @@ void main()
     Player player ( initialPos );
     map.GetMap ( ) [ initialPos.y ][ initialPos.x ] = PLAYER;
 
-    system ( "cls" );
+    //system ( "cls" );
     map.DrawAllMapVisuals ( );
 	//INITIALIZE
 	while (true)
@@ -100,7 +101,7 @@ void main()
 		//INPUTS
         if ( GetAsyncKeyState ( VK_UP ) & 0x8000 )
         {
-            Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y - 1 };
+            Vector2 newPos = { player.GetPosition().x, player.GetPosition ( ).y - 1 };
             if ( map.IsValidPosition ( newPos ) )
             {
                 map.GetMap ( ) [ player.GetPosition ( ).y ][ player.GetPosition ( ).x ] = EMPTY;
@@ -154,13 +155,33 @@ void main()
             NPCMovement(map);
         }
 
-        else if ( GetAsyncKeyState ( VK_SPACE ) )
+        else if ( GetAsyncKeyState ( VK_SPACE ) )//Attack
         {
-            //Attack
+            std::vector<Pedestrian>& pedestrianSFList = map.GetPedestrianSFList();
+            std::vector<Pedestrian>& pedestrianLSList = map.GetPedestrianLSList();
+
+            if (pedestrianSFList.empty() || pedestrianLSList.empty()) return;
+
+            for (int i = 0; i < pedestrianSFList.size(); i++)
+            {
+                if (map.NextToPlayer(pedestrianSFList[i]))
+                {
+                    pedestrianSFList[i].active = false;
+                    map.ErasePedestrianOfMap(pedestrianSFList[i].GetPosition().x, pedestrianSFList[i].GetPosition().y);
+                }
+            }
+
+            for (int i = 0; i < pedestrianLSList.size(); i++)
+            {
+                if (map.NextToPlayer(pedestrianLSList[i]))
+                {
+                    pedestrianLSList[i].active = false;
+                    map.ErasePedestrianOfMap(pedestrianLSList[i].GetPosition().x, pedestrianLSList[i].GetPosition().y);
+                }
+            }
         }
-        else if ( GetAsyncKeyState ( VK_ESCAPE ) )
+        else if ( GetAsyncKeyState ( VK_ESCAPE ) ) //Exit game
         {
-            //Exit game
             break;
         }
 
