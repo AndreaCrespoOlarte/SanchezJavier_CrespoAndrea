@@ -46,4 +46,8 @@ public:
 	{
 		symbolShow = symbol;
 	}
+	void SetMoney ( int newMoney)
+	{
+		money = newMoney;
+	}
 };

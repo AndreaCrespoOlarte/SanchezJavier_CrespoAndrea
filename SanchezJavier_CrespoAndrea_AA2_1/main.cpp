@@ -108,9 +108,9 @@ void main()
                 player.Move ( newPos );
                 player.SetSymbol ( '^' );
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
-                UpdateScreen ( map , player );
             }
             NPCMovement(map);
+            UpdateScreen ( map , player );
         }
 
         else if ( GetAsyncKeyState ( VK_DOWN ))
@@ -122,9 +122,9 @@ void main()
                 player.Move ( newPos );
                 player.SetSymbol ( 'v' );
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
-                UpdateScreen ( map , player );
             }
             NPCMovement(map);
+            UpdateScreen ( map , player );
         }
 
         else if ( GetAsyncKeyState ( VK_RIGHT ))
@@ -136,9 +136,9 @@ void main()
                 player.Move ( newPos );
                 player.SetSymbol ( '>' );
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
-                UpdateScreen ( map , player );
             }
             NPCMovement(map);
+            UpdateScreen ( map , player );
         }
 
         else if ( GetAsyncKeyState ( VK_LEFT ))
@@ -150,9 +150,9 @@ void main()
                 player.Move ( newPos );
                 player.SetSymbol ( '<' );
                 map.GetMap ( ) [ newPos.y ][ newPos.x ] = PLAYER;
-                UpdateScreen ( map , player );
             }
             NPCMovement(map);
+            UpdateScreen ( map , player );
         }
 
         else if ( GetAsyncKeyState ( VK_SPACE ) )//Attack

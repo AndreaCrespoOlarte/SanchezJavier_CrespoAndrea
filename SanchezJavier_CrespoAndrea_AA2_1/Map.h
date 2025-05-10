@@ -277,15 +277,16 @@ public:
         }
     }
 
-    bool IsValidPosition ( Vector2 targetPos )
+    bool IsValidPosition ( Vector2 targetPos, Player* player = nullptr )
     {
+        bool inLimits = targetPos.y >= 0 && targetPos.y < height && targetPos.x >= 0 && targetPos.x < width;
+        if ( !inLimits ) return false;
         if (map[targetPos.y][targetPos.x] == MONEY)
         {
-            GetMoney();
+            if ( player != nullptr ) player->SetMoney ( moneyPerKill_LosSantos);
+            map [ targetPos.y ][ targetPos.x ] == EMPTY;
         }
-        return targetPos.y >= 0 && targetPos.y < height &&
-            targetPos.x >= 0 && targetPos.x < width &&
-            (map [ targetPos.y ][ targetPos.x ] == EMPTY || map[targetPos.y][targetPos.x] == MONEY);
+        return map [ targetPos.y ][ targetPos.x ] == EMPTY || map[targetPos.y][targetPos.x] == MONEY;
     }
     bool NextToPlayer ( Pedestrian& p) //Detectar a un jugador vecino
     {
