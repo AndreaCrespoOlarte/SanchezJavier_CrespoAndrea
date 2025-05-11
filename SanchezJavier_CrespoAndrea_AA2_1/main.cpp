@@ -152,6 +152,7 @@ void main()
                     system ( "cls" );
                     map.GetMap ( ) [ p.GetPosition ( ).y ][ p.GetPosition ( ).x ] = MONEY;
                     pedestrianLSList.erase ( pedestrianLSList.begin ( ) + i );
+                    map.SpawnPedestrianToMap(1, pedestrianLSList, 0, true);
                     UpdateScreen ( map , player );
                 }
             }
@@ -166,6 +167,7 @@ void main()
                     system("cls");
                     map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
                     pedestrianSFList.erase(pedestrianSFList.begin() + i);
+                    map.SpawnPedestrianToMap(1, pedestrianLSList, 0, false);
                     UpdateScreen(map, player);
                 }
             }
