@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|solutionrelative:SanchezJavier_CrespoAndrea_AA2_1\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|solutionrelative:SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|solutionrelative:SanchezJavier_CrespoAndrea_AA2_1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -31,16 +39,8 @@
       "RelativeMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|solutionrelative:SanchezJavier_CrespoAndrea_AA2_1\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|solutionrelative:SanchezJavier_CrespoAndrea_AA2_1\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Board.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|solutionrelative:SanchezJavier_CrespoAndrea_AA2_1\\Board.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|solutionrelative:SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E38872E3-F3BC-4042-9BB8-CE4F1D00FC50}|SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1.vcxproj|C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -58,11 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Board.txt",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Board.txt",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Board.txt",
@@ -70,64 +70,63 @@
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Board.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-05-10T18:39:12.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-10T18:39:12.278Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Pedestrian.h",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.h",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.h",
               "ToolTip": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.h",
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.h",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAADQAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-10T18:32:47.652Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\main.cpp",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\main.cpp",
               "ToolTip": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\main.cpp",
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\main.cpp",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAewJoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-10T11:59:32.422Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "Pedestrian.cpp",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp",
               "ToolTip": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp",
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Pedestrian.cpp",
-              "ViewState": "AgIAAA0AAABA5VUdGb0ZwAcAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-10T11:59:35.972Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Map.h",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Map.h",
               "ToolTip": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Map.h",
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Map.h",
-              "ViewState": "AgIAAFQBAAAAAAAAAAAewGIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAK4AAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-10T11:59:39.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Header.h",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Header.h",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Header.h",
@@ -135,12 +134,11 @@
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Header.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-10T11:59:39.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-10T11:59:39.66Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Vector2.h",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Vector2.h",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Vector2.h",
@@ -148,12 +146,11 @@
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Vector2.h",
               "ViewState": "AgIAABAAAAAAAAAAAAAewAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-10T11:59:37.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-10T11:59:37.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Player.cpp",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Player.cpp",
@@ -161,12 +158,11 @@
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Player.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-10T11:59:36.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-10T11:59:36.12Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Map.cpp",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Map.cpp",
@@ -174,12 +170,11 @@
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Map.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-10T11:59:35.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-10T11:59:35.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Header.cpp",
               "DocumentMoniker": "C:\\Users\\andre\\Documents\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\SanchezJavier_CrespoAndrea_AA2_1\\Header.cpp",
               "RelativeDocumentMoniker": "SanchezJavier_CrespoAndrea_AA2_1\\Header.cpp",
@@ -187,8 +182,7 @@
               "RelativeToolTip": "SanchezJavier_CrespoAndrea_AA2_1\\Header.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-10T11:59:34.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-10T11:59:34.453Z"
             },
             {
               "$type": "Document",

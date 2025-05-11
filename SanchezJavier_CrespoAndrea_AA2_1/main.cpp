@@ -9,7 +9,8 @@ void UpdateScreen ( Map & map , Player & player )
     std::cout << "Money: " << player.GetMoney() << std::endl;
 }
 
-void NPCMovement ( Map & map )
+void NPCMovement ( Map & map ) //Mueve a los NPC de manera aleatoria 
+                               //después de cada movimiento del jugador
 {
     std::vector<Pedestrian> & pedestrianSFList = map.GetPedestrianSFList ( );
     std::vector<Pedestrian> & pedestrianLSList = map.GetPedestrianLSList ( );
@@ -78,7 +79,7 @@ void main()
 	while (true)
 	{
 		//INPUTS
-        if ( GetAsyncKeyState ( VK_UP ))
+        if ( GetAsyncKeyState ( VK_UP )) //Arriba
         {
             Vector2 newPos = { player.GetPosition().x, player.GetPosition ( ).y - 1 };
             
@@ -93,7 +94,7 @@ void main()
             UpdateScreen ( map , player );
         }
 
-        else if ( GetAsyncKeyState ( VK_DOWN ))
+        else if ( GetAsyncKeyState ( VK_DOWN )) //Abajo
         {
             Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y + 1 };
             if ( map.IsValidPosition(newPos, &player))
@@ -107,7 +108,7 @@ void main()
             UpdateScreen ( map , player );
         }
 
-        else if ( GetAsyncKeyState ( VK_RIGHT ))
+        else if ( GetAsyncKeyState ( VK_RIGHT )) //Derecha
         {
             Vector2 newPos = { player.GetPosition ( ).x + 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition(newPos, &player))
@@ -121,7 +122,7 @@ void main()
             UpdateScreen ( map , player );
         }
 
-        else if ( GetAsyncKeyState ( VK_LEFT ))
+        else if ( GetAsyncKeyState ( VK_LEFT )) //Izquierda
         {
             Vector2 newPos = { player.GetPosition ( ).x - 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition(newPos, &player))
@@ -144,7 +145,8 @@ void main()
 
             for ( int i = 0; i < pedestrianLSList.size ( ); i++ )
             {
-                if ( map.NextToPlayer ( pedestrianLSList [ i ] ) )
+                if ( map.NextToPlayer ( pedestrianLSList [ i ] ) ) //Comprueba si hay algún NPC adyacente 
+                                                                   //de Los Santos
                 {
                     Pedestrian p = pedestrianLSList [ i ];
                     p.SetActive ( false );
@@ -156,9 +158,10 @@ void main()
                     UpdateScreen ( map , player );
                 }
             }
-            for (int i = 0; i < pedestrianSFList.size(); i++)
+            for (int i = 0; i < pedestrianSFList.size(); i++) 
             {
-                if (map.NextToPlayer(pedestrianSFList[i]))
+                if (map.NextToPlayer(pedestrianSFList[i])) //Comprueba si hay algún NPC adyacente 
+                                                           //de San Fierro
                 {
                     Pedestrian p = pedestrianSFList[i];
                     p.SetActive(false);

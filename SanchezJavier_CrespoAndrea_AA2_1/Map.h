@@ -7,21 +7,6 @@
 #include "Mathf.h"
 #include "Player.h"
 
-/*
-Lectura y carga de un archivo para redimensionar el mapa.
-Archivo .txt
-Ancho; Alto;
-Cantidad_Peatones_LosSantos; DineroPeaje_SanFierro; DineroPorKill_LosSantos;
-Cantidad_Peatones_SanFierro; DineroPeaje_LasVenturas; DineroPorKill_SanFierro;
-
-El mapa constará de 3 partes horizontales:
-- Los Santos
-- San Fierro
-- Las Venturas
-
-SIMBOLOS:
-Paredes = X
-*/
 #define FOV_X 20
 #define FOV_Y 20
 enum MapEntities
@@ -78,7 +63,7 @@ public:
     }
 private:
 
-    void ReadFile ( )
+    void ReadFile ( ) //Lee el archivo con la información de la partida
     {
         std::ifstream file ( "Board.txt" );
         if ( !file.is_open ( ) )
@@ -129,7 +114,7 @@ private:
     }
 public:
 
-    void DrawMap ( )
+    void DrawMap ( ) //Asigna la posición de los límites/paredes
     {
         if ( width == 0 || height == 0 ) return;
 
@@ -161,7 +146,7 @@ public:
             }
         }
     }
-    void DrawAllMapVisuals ( )
+    void DrawAllMapVisuals ( ) //Dibuja los simbolos en el mapa
     {
         if ( width == 0 || height == 0 ) return;
 
@@ -186,7 +171,8 @@ public:
         }
         std::cout << '\t' << '\t' << "Los_Santos" << '\t' << '\t' << '\t' << '\t' << '\t' << '\t' << "San_Fierro" << '\t' << '\t' << '\t' << '\t' << '\t' << '\t' << "Las_Venturas";
     }
-    void DrawFieldOfView ( Player player )
+    void DrawFieldOfView ( Player player ) //Dibuja los visuales que se encuentran dentro del FOV
+                                           //del jugador, dejándolo siempre en el centro.
     {
         Vector2 pos = player.GetPosition( );
 
