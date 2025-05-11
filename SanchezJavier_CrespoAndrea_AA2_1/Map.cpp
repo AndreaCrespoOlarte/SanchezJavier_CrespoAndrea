@@ -1,5 +1,5 @@
 #include "Map.h"
-void Map::ReadFile ( )
+void Map::ReadFile ( ) //Lectura de la información del archivo
 {
     std::ifstream file ( "Board.txt" );
     if ( !file.is_open ( ) )
@@ -12,7 +12,8 @@ void Map::ReadFile ( )
     std::string line;
     while ( getline ( file , line , ';' ) )
     {
-        int value = std::stoi ( line );
+        //Aplicamos la información del archivo al string 
+        int value = std::stoi ( line ); //Casteamos los datos del string a un valor númerico
         switch ( counter )
         {
             case 0: width = value * 3; break; // Multiplicamos por 3 porque son 3 zonas horizontales
@@ -30,7 +31,7 @@ void Map::ReadFile ( )
     }
     file.close ( );
 }
-void Map::InitializeMap ( ) 
+void Map::InitializeMap ( ) //Inicializa el array dinámico
 {
     map = new MapEntities * [ height ];
 
@@ -47,7 +48,7 @@ void Map::InitializeMap ( )
     SetPedestrianToMap ( pedestrianLS_Amount , pedestrianLSList , width / 3 , true );
     SetPedestrianToMap ( pedestrianSF_Amount , pedestrianSFList , width / 2 + 15 , false );
 }
-void Map::DrawMap ( ) const
+void Map::DrawMap ( ) const //Asigna a cada celda lo que contiene
 {
     if ( width == 0 || height == 0 ) return;
 
@@ -79,7 +80,7 @@ void Map::DrawMap ( ) const
         }
     }
 }
-void Map::DrawAllMapVisuals ( ) const
+void Map::DrawAllMapVisuals ( ) const //Dibuja por pantalla los símbolos de cada celda
 {
     if ( width == 0 || height == 0 ) return;
 
@@ -104,7 +105,7 @@ void Map::DrawAllMapVisuals ( ) const
     }
     std::cout << '\t' << '\t' << "Los_Santos" << '\t' << '\t' << '\t' << '\t' << '\t' << '\t' << "San_Fierro" << '\t' << '\t' << '\t' << '\t' << '\t' << '\t' << "Las_Venturas";
 }
-void Map::DrawFieldOfView ( Player player ) const
+void Map::DrawFieldOfView ( Player player ) const //Asigna los bordes del campo de visión del jugador
 {
     Vector2 pos = player.GetPosition ( );
 
@@ -118,6 +119,7 @@ void Map::DrawFieldOfView ( Player player ) const
 
 void Map::DrawMapVisuals ( const int minX , const int maxX , const int minY , const int maxY , Player player ) const
 {
+    //Dibuja aquello dentro del campo de visión del jugador
     for ( int y = minY; y <= maxY; ++y )
     {
         if ( y < 0 || y >= height ) continue;
@@ -148,6 +150,7 @@ void Map::DrawMapVisuals ( const int minX , const int maxX , const int minY , co
     }
 }
 void Map::SpawnPedestrianToMap ( const int pedestrianAmount , std::vector<Pedestrian> & list , const int offset , const bool LSpedestrian ) const
+    //Genera los peatones
 {
     int randX = 0;
     int randY = 0;
@@ -207,6 +210,7 @@ void Map::SpawnPedestrianToMap ( const int pedestrianAmount , std::vector<Pedest
 }
 void Map::SetPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & pedestrianList , int offset , bool LSpedestrian )
 {
+    //Coloca a los peatones en el mapa
     SpawnPedestrianToMap ( pedestrianAmount , pedestrianList , offset , LSpedestrian );
     for ( Pedestrian p : pedestrianList )
     {
@@ -215,6 +219,7 @@ void Map::SetPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & 
 } 
 bool Map::IsValidPosition ( const Vector2 targetPos , Player * player) const
 {
+    //Comprueba si la siguiente posición es válida
     if ( targetPos.y < 0 || targetPos.y >= height - 1 || targetPos.x < 0 || targetPos.x >= width - 1 )
     {
         return false;
@@ -224,7 +229,7 @@ bool Map::IsValidPosition ( const Vector2 targetPos , Player * player) const
         return false;
     }
 
-    if ( map [ targetPos.y ][ targetPos.x ] != EMPTY && map [ targetPos.y ][ targetPos.x ] != MONEY && map [ targetPos.y ][ targetPos.x ] )
+    if ( map [ targetPos.y ][ targetPos.x ] != EMPTY && map [ targetPos.y ][ targetPos.x ] != MONEY && map [ targetPos.y ][ targetPos.x ] != TAXES )
     {
         return false;
     }
@@ -240,12 +245,12 @@ bool Map::IsValidPosition ( const Vector2 targetPos , Player * player) const
     }
     if ( map [ targetPos.y ][ targetPos.x ] == TAXES )
     {
-        if ( player != nullptr )
+        /*if ( player != nullptr )
         {
             int reward = ( rand ( ) % ( moneyPerKill_LosSantos - 1 ) ) + 1;
             player->AddMoney ( reward );
         }
-        map [ targetPos.y ][ targetPos.x ] = EMPTY;
+        map [ targetPos.y ][ targetPos.x ] = EMPTY;*/
     }
 
     return true;

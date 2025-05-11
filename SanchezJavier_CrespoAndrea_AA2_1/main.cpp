@@ -4,7 +4,7 @@
 
 void main()
 {
-    const int FPS_Desired = 60;
+    const int FPS_Desired = 60; //A cuántos FPS quieres que vaya el juego
     srand ( time ( NULL ) );
     Map map;
     Vector2 initialPos = { 1, 1 };
@@ -17,7 +17,7 @@ void main()
 	while (true)
 	{
 		//INPUTS
-        if ( GetAsyncKeyState ( VK_UP ))
+        if ( GetAsyncKeyState ( VK_UP )) //Arriba
         {
             Vector2 newPos = { player.GetPosition().x, player.GetPosition ( ).y - 1 };
             
@@ -32,7 +32,7 @@ void main()
             UpdateScreen ( map , player );
         }
 
-        else if ( GetAsyncKeyState ( VK_DOWN ))
+        else if ( GetAsyncKeyState ( VK_DOWN )) //Abajo
         {
             Vector2 newPos = { player.GetPosition ( ).x, player.GetPosition ( ).y + 1 };
             if ( map.IsValidPosition(newPos, &player))
@@ -46,7 +46,7 @@ void main()
             UpdateScreen ( map , player );
         }
 
-        else if ( GetAsyncKeyState ( VK_RIGHT ))
+        else if ( GetAsyncKeyState ( VK_RIGHT )) //Derecha
         {
             Vector2 newPos = { player.GetPosition ( ).x + 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition(newPos, &player))
@@ -60,7 +60,7 @@ void main()
             UpdateScreen ( map , player );
         }
 
-        else if ( GetAsyncKeyState ( VK_LEFT ))
+        else if ( GetAsyncKeyState ( VK_LEFT )) //Izquierda
         {
             Vector2 newPos = { player.GetPosition ( ).x - 1, player.GetPosition ( ).y };
             if ( map.IsValidPosition(newPos, &player))
@@ -74,15 +74,16 @@ void main()
             UpdateScreen ( map , player );
         }
 
-        else if ( GetAsyncKeyState ( VK_SPACE ) )//Attack
+        else if ( GetAsyncKeyState ( VK_SPACE ) )//Ataque
         {
             std::vector<Pedestrian>& pedestrianSFList = map.GetPedestrianSFList();
             std::vector<Pedestrian>& pedestrianLSList = map.GetPedestrianLSList();
 
             if (pedestrianSFList.empty() || pedestrianLSList.empty()) return;
 
-            for ( int i = 0; i < pedestrianLSList.size ( ); i++ )
+            for ( int i = 0; i < pedestrianLSList.size ( ); i++ ) 
             {
+                //Comprueba si hay un peaton adyacente iterando en ambas listas
                 if ( map.NextToPlayer ( pedestrianLSList [ i ] ) )
                 {
                     Pedestrian p = pedestrianLSList [ i ];

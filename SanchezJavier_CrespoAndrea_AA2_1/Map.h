@@ -6,23 +6,10 @@
 #include "Pedestrian.h"
 #include "Player.h"
 
-/*
-Lectura y carga de un archivo para redimensionar el mapa.
-Archivo .txt
-Ancho; Alto;
-Cantidad_Peatones_LosSantos; DineroPeaje_SanFierro; DineroPorKill_LosSantos;
-Cantidad_Peatones_SanFierro; DineroPeaje_LasVenturas; DineroPorKill_SanFierro;
-
-El mapa constará de 3 partes horizontales:
-- Los Santos
-- San Fierro
-- Las Venturas
-
-SIMBOLOS:
-Paredes = X
-*/
-#define FOV_X 20
+//Campo de visión tanto en x como en y
+#define FOV_X 20 
 #define FOV_Y 20
+
 enum MapEntities
 {
     WALL = 1 ,
@@ -37,6 +24,7 @@ enum MapEntities
 
 class Map
 {
+private:
     const char WALL_SYMBOL = 'X';
     const char EMPTY_SYMBOL = ' ';
     const char PEDESTRIAN_SYMBOL = 'P';
@@ -58,7 +46,6 @@ class Map
     int moneyTaxFor_LasVenturas;
     int moneyPerKill_LasVenturas;
 
-private:
     void ReadFile ( );
     void InitializeMap ( );
 

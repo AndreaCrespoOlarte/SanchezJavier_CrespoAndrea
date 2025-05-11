@@ -1,12 +1,15 @@
 #include "Map.h"
-void UpdateScreen ( Map & map , Player & player )
+void UpdateScreen ( Map & map , Player & player ) //Reset de pantalla
 {
     system ( "cls" );
     map.DrawFieldOfView ( player );
     std::cout << "Money: " << player.GetMoney ( ) << std::endl;
 }
 
-void NPCMovement ( Map & map )
+void NPCMovement ( Map & map ) 
+/* Función encargada de hacer que el movimiento de los peatones sea aleatorio iterando las dos listas
+de tipos de peatones (Los Santos y San Fierro).
+*/
 {
     std::vector<Pedestrian> & pedestrianSFList = map.GetPedestrianSFList ( );
     std::vector<Pedestrian> & pedestrianLSList = map.GetPedestrianLSList ( );
