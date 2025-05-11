@@ -23,15 +23,16 @@ SIMBOLO PLAYER:
 */
 class Player
 {
+private:
 	char symbolShow;
 	Vector2 position;
 	int money;
-	//Vector2 GetPosition ( ) { return position; }
 public:
-	Player ( Vector2 _position)
+	Player ( const Vector2 _position)
 	{
 		position = _position;
 		money = 0;
+		symbolShow = '^';
 	}
 
 	Vector2 GetPosition() const {
@@ -39,7 +40,7 @@ public:
 	}
 	void Move ( Vector2 newPos );
 
-	char GetSymbol ( )
+	char GetSymbol ( ) const
 	{
 		return symbolShow;
 	}
@@ -47,11 +48,10 @@ public:
 	{
 		symbolShow = symbol;
 	}
-	int GetMoney()
+	int GetMoney() const
 	{
 		return money;
 	}
-	
 	void AddMoney (int newMoney)
 	{
 		money += newMoney;

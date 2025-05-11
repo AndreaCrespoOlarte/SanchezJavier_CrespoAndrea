@@ -27,7 +27,7 @@ private:
 	
 public:
 	bool active;
-	Vector2 GetPosition ( )
+	Vector2 GetPosition ( ) const
 	{
 		return position;
 	}
@@ -36,8 +36,7 @@ public:
 		position.x = x;
 		position.y = y;
 	}
-
-	bool GetActive ( )
+	bool GetActive ( ) const
 	{
 		return active;
 	}
@@ -45,12 +44,11 @@ public:
 	{
 		active = isActived;
 	}
-	Pedestrian ( Vector2 _position, int _money ) : position ( _position ) , active ( true ), money (_money) { }
-	void Move ( Vector2 newPos );
-	bool CheckColision ( ); //Detector de colisiones Devuelve "true" o "false";
-	int GetMoney ( )
+	int GetMoney ( ) const
 	{
 		return money;
 	}
+	Pedestrian ( const Vector2 _position, const int _money ) : position ( _position ) , active ( true ), money (_money) { }
+	void Move ( Vector2 newPos );
 
 };
