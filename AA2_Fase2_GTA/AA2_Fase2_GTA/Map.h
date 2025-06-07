@@ -109,5 +109,5 @@ public:
     void SetPedestrianToMap ( int pedestrianAmount , std::vector<Pedestrian> & pedestrianList , bool LSpedestrian );
     void SetCarToMap(int carAmount, std::vector<Car>& pedestrianList, Location location);
     bool IsValidPosition(const Vector2 targetPos, Player* player = nullptr) const;
-    bool NextToPlayer ( Pedestrian & p, BigSmoke* bg = nullptr ) const;
+    bool NextToPlayer ( Pedestrian & p ) const;
 };
