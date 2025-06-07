@@ -396,7 +396,7 @@ bool Map::IsValidPosition ( const Vector2 targetPos , Player * player ) const
     }
     return false;
 }
-bool Map::NextToPlayer(Pedestrian& p) const
+bool Map::NextToPlayer(Pedestrian& p, BigSmoke* bg) const
 {
     Vector2 pos = p.GetPosition();
 
@@ -406,7 +406,16 @@ bool Map::NextToPlayer(Pedestrian& p) const
         {
             if (dx == pos.x && dy == pos.y)
                 continue;
-
+            if ( bg != nullptr )
+            {
+                if ( dy >= 0 && dy < height && dx >= 0 && dx < width )
+                {
+                    if ( map [ dy ][ dx ] == PLAYER )
+                    {
+                        return true;
+                    }
+                }
+            }
             if (dy >= 0 && dy < height && dx >= 0 && dx < width)
             {
                 if (map[dy][dx] == PLAYER)
