@@ -50,7 +50,7 @@ void Scenes::MostrarMenu()
                 std::cout << "Saliendo del juego";
                 break;
             default:
-                std::cout << "Opción no válida" << std::endl;
+                std::cout << "Opción no valida" << std::endl;
         }
 
     } while (opcion != 1 && opcion != 2);
@@ -69,6 +69,6 @@ void Scenes::MostrarGameOver()
             << "                  GAME OVER               " << std::endl
             << "==========================================" << std::endl
             << "     CJ ha llegado al final del camino.   " << std::endl
-            << "    El juego se cerrará automáticamente.  " << std::endl;
+            << "    El juego se cerrara automaticamente.  " << std::endl;
     }
 }
