@@ -193,7 +193,7 @@ void GameLoop::PlayGame()
             std::vector<Pedestrian>& pedestrianLSList = map.GetPedestrianLSList();
 
             if (pedestrianSFList.empty() || pedestrianLSList.empty()) return;
-
+            std::cout << "VIDA CJ: " << player.GetHP();
             //Comprueba si hay un peaton adyacente iterando en ambas listas
             for (int i = 0; i < pedestrianLSList.size(); i++)
             {
@@ -205,7 +205,7 @@ void GameLoop::PlayGame()
                         attacked = true;
                         p.SetHP ( p.GetHP ( ) - 1 );
 
-                        std::cout << "PRINTEANDO VIDA: " << p.GetHP ( );
+                        std::cout << "VIDA PEATON: " << p.GetHP ( );
                     }
                     
                     if (p.GetHP() <= 0)
@@ -247,7 +247,6 @@ void GameLoop::PlayGame()
                     break;
                 }
             }
-
         }
         else if (GetAsyncKeyState(VK_ESCAPE)) //Exit game
         {
