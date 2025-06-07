@@ -191,11 +191,10 @@ void GameLoop::PlayGame()
             spacePressedLastFrame = false;
             std::vector<Pedestrian>& pedestrianSFList = map.GetPedestrianSFList();
             std::vector<Pedestrian>& pedestrianLSList = map.GetPedestrianLSList();
-            BigSmoke& bg = map.GetBigSmoke ( );
             if (pedestrianSFList.empty() || pedestrianLSList.empty()) return;
 
             //Comprueba si hay un peaton adyacente iterando en ambas listas
-            
+
             for (int i = 0; i < pedestrianLSList.size(); i++)
             {
                 Pedestrian & p = pedestrianLSList [ i ];

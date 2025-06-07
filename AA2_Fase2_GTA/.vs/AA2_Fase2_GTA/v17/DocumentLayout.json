@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\BigSmoke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\GameLoop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\GameLoop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -17,18 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\BigSmoke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\GameLoop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|solutionrelative:AA2_Fase2_GTA\\GameLoop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4D43B09-9047-4357-87CD-D064ADDF7F4C}|AA2_Fase2_GTA\\AA2_Fase2_GTA.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Scenes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -78,48 +78,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BigSmoke.h",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.h",
-              "RelativeDocumentMoniker": "AA2_Fase2_GTA\\BigSmoke.h",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.h",
-              "RelativeToolTip": "AA2_Fase2_GTA\\BigSmoke.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:21.826Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "config.txt",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\config.txt",
-              "RelativeDocumentMoniker": "AA2_Fase2_GTA\\config.txt",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\config.txt",
-              "RelativeToolTip": "AA2_Fase2_GTA\\config.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-06-07T07:24:59.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BigSmoke.cpp",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.cpp",
-              "RelativeDocumentMoniker": "AA2_Fase2_GTA\\BigSmoke.cpp",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.cpp",
-              "RelativeToolTip": "AA2_Fase2_GTA\\BigSmoke.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-07T06:35:55.794Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{93c5e7ad-af06-49e6-a756-b8f3eaca790d}"
@@ -142,7 +102,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "BigSmoke.h",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.h",
+              "RelativeDocumentMoniker": "AA2_Fase2_GTA\\BigSmoke.h",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.h",
+              "RelativeToolTip": "AA2_Fase2_GTA\\BigSmoke.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-06T20:18:21.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "config.txt",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\config.txt",
+              "RelativeDocumentMoniker": "AA2_Fase2_GTA\\config.txt",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\config.txt",
+              "RelativeToolTip": "AA2_Fase2_GTA\\config.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-06-07T07:24:59.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BigSmoke.cpp",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.cpp",
+              "RelativeDocumentMoniker": "AA2_Fase2_GTA\\BigSmoke.cpp",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\BigSmoke.cpp",
+              "RelativeToolTip": "AA2_Fase2_GTA\\BigSmoke.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T06:35:55.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Scenes.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Scenes.cpp",
               "RelativeDocumentMoniker": "AA2_Fase2_GTA\\Scenes.cpp",
@@ -150,8 +147,7 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Scenes.cpp",
               "ViewState": "AgIAACQAAAAAAAAAAAAIwCcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-06T23:57:28.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T23:57:28.841Z"
             },
             {
               "$type": "Document",
@@ -175,8 +171,7 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Utils.h",
               "ViewState": "AgIAADcAAAAAAAAAAAAYwFcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:24.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:24.498Z"
             },
             {
               "$type": "Document",
@@ -188,8 +183,7 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Scenes.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:24.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:24.357Z"
             },
             {
               "$type": "Document",
@@ -201,8 +195,7 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Player.h",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:24.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:24.155Z"
             },
             {
               "$type": "Document",
@@ -214,25 +207,23 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Pedestrian.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:24.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:24.022Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Map.h",
               "RelativeDocumentMoniker": "AA2_Fase2_GTA\\Map.h",
               "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Map.h",
               "RelativeToolTip": "AA2_Fase2_GTA\\Map.h",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAAEsAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:23.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:23.905Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "GameLoop.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\GameLoop.h",
               "RelativeDocumentMoniker": "AA2_Fase2_GTA\\GameLoop.h",
@@ -240,8 +231,7 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\GameLoop.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:23.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:23.772Z"
             },
             {
               "$type": "Document",
@@ -253,8 +243,7 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Cars.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-06T20:18:23.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:23.636Z"
             },
             {
               "$type": "Document",
@@ -266,25 +255,23 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Pedestrian.cpp",
               "ViewState": "AgIAACwAAAAAAAAAAAAIwD0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-06T20:18:17.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:17.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Map.cpp",
               "RelativeDocumentMoniker": "AA2_Fase2_GTA\\Map.cpp",
               "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\Map.cpp",
               "RelativeToolTip": "AA2_Fase2_GTA\\Map.cpp",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAnwFUAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAnwE0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-06T20:18:16.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:16.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\main.cpp",
               "RelativeDocumentMoniker": "AA2_Fase2_GTA\\main.cpp",
@@ -292,21 +279,19 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-06T20:18:16.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:16.739Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "GameLoop.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\GameLoop.cpp",
               "RelativeDocumentMoniker": "AA2_Fase2_GTA\\GameLoop.cpp",
               "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SanchezJavier_CrespoAndrea_AA2_1\\AA2_Fase2_GTA\\AA2_Fase2_GTA\\GameLoop.cpp",
               "RelativeToolTip": "AA2_Fase2_GTA\\GameLoop.cpp",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAYwMUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAALgAAAAAAAAAAAAnwMcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-06T20:18:16.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:16.495Z"
             },
             {
               "$type": "Document",
@@ -318,8 +303,7 @@
               "RelativeToolTip": "AA2_Fase2_GTA\\Player.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAADoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-06T20:18:13.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:18:13.568Z"
             }
           ]
         }

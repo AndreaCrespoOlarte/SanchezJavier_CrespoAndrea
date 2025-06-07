@@ -1,2 +1,3 @@
-﻿  GameLoop.cpp
-  AA2_Fase2_GTA.vcxproj -> C:\Users\andre\Documents\GitHub\SanchezJavier_CrespoAndrea_AA2_1\AA2_Fase2_GTA\x64\Debug\AA2_Fase2_GTA.exe
+﻿x64\Debug\GameLoop.obj : warning LNK4042: objeto especificado más de una vez; omitidos los sobrantes
+main.obj : error LNK2019: símbolo externo "public: __cdecl GameLoop::GameLoop(void)" (??0GameLoop@@QEAA@XZ) sin resolver al que se hace referencia en la función "public: __cdecl Scenes::Scenes(void)" (??0Scenes@@QEAA@XZ)
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SanchezJavier_CrespoAndrea_AA2_1\AA2_Fase2_GTA\x64\Debug\AA2_Fase2_GTA.exe : fatal error LNK1120: 1 externos sin resolver
