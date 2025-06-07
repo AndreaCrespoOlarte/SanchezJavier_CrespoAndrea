@@ -1,0 +1,21 @@
+﻿  GameLoop.cpp
+C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\Utils.h(19,24): warning C4018: '<': no coinciden signed/unsigned
+  (compilando archivo de origen "GameLoop.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\Utils.h(44,24): warning C4018: '<': no coinciden signed/unsigned
+  (compilando archivo de origen "GameLoop.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\Utils.h(79,27): warning C4018: '<': no coinciden signed/unsigned
+  (compilando archivo de origen "GameLoop.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\Utils.h(86,27): warning C4018: '<': no coinciden signed/unsigned
+  (compilando archivo de origen "GameLoop.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\Utils.h(97,24): warning C4018: '<': no coinciden signed/unsigned
+  (compilando archivo de origen "GameLoop.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\GameLoop.cpp(187,31): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\GameLoop.cpp(214,31): warning C4018: '<': no coinciden signed/unsigned
+  Map.cpp
+  Generando código...
+  AA2_Fase2_GTA.vcxproj -> C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\Debug\AA2_Fase2_GTA.exe
