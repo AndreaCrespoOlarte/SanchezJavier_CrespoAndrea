@@ -9,9 +9,8 @@ private:
 	Player player;
 
 public:
-	GameLoop()
-	{
-	}
+	GameLoop ( );
 
 	void PlayGame();
+
 };

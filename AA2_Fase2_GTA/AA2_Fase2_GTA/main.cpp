@@ -2,9 +2,10 @@
 #include "GameLoop.h"
 #include "Scenes.h"
 
-void main()
+int main()
 {
     srand ( time ( NULL ) );
     Scenes scene;
     scene.MostrarPantallaInit();
+    return 0;
 }

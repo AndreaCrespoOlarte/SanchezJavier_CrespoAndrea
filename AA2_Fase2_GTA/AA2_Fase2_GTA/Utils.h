@@ -18,7 +18,7 @@ de tipos de peatones (Los Santos y San Fierro).
 
     for ( int i = 0; i < pedestrianSFList.size ( ); i++ )
     {
-        if ( !pedestrianSFList [ i ].active || map.NextToPlayer ( pedestrianSFList [ i ] ) )
+        if ( !pedestrianSFList [ i ].GetActive() || map.NextToPlayer ( pedestrianSFList [ i ] ) )
             continue;
 
         Vector2 pos = pedestrianSFList [ i ].GetPosition ( );
@@ -43,7 +43,7 @@ de tipos de peatones (Los Santos y San Fierro).
 
     for ( int i = 0; i < pedestrianLSList.size ( ); i++ )
     {
-        if ( !pedestrianLSList [ i ].active || map.NextToPlayer ( pedestrianLSList [ i ] ) )
+        if ( !pedestrianLSList [ i ].GetActive ( ) || map.NextToPlayer ( pedestrianLSList [ i ] ) )
             continue;
 
         Vector2 pos = pedestrianLSList [ i ].GetPosition ( );
@@ -78,14 +78,14 @@ void NPCAttack(Map& map, Player& player)
     {
         for (int i = 0; i < pedestrianLSList.size(); i++)
         {
-            if (pedestrianLSList[i].canAttack(player.GetPosition()) && map.NextToPlayer(pedestrianLSList[i]))
+            if (pedestrianLSList[i].CanAttack(player.GetPosition()) && map.NextToPlayer(pedestrianLSList[i]))
             {
                 player.SetHP(1);
             }
         }
         for (int i = 0; i < pedestrianSFList.size(); i++)
         {
-            if (pedestrianSFList[i].canAttack(player.GetPosition()) && map.NextToPlayer(pedestrianSFList[i]))
+            if (pedestrianSFList[i].CanAttack(player.GetPosition()) && map.NextToPlayer(pedestrianSFList[i]))
             {
                 player.SetHP(1);
             }

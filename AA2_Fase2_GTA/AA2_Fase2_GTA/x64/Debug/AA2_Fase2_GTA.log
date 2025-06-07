@@ -3,11 +3,12 @@
   GameLoop.cpp
   GameLoop.h
   main.cpp
-C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\main.cpp(5,6): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\AA2_Fase2_GTA\main.cpp(7,18): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SanchezJavier_CrespoAndrea_AA2_1\AA2_Fase2_GTA\AA2_Fase2_GTA\main.cpp(7,18): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   Map.cpp
   Pedestrian.cpp
   Player.cpp
   Scenes.cpp
   Generando código...
-LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\Users\xasa7\OneDrive\Documentos\GitHub\Fundamentos_De_La_Programacion\Fonaments_Programació\AA2_Fase2_Javier_Sanchez_Andrea_Crespo_GTA\AA2_Fase2_GTA\x64\Debug\AA2_Fase2_GTA.exe'
+x64\Debug\GameLoop.obj : warning LNK4042: objeto especificado más de una vez; omitidos los sobrantes
+main.obj : error LNK2019: símbolo externo "public: __cdecl GameLoop::GameLoop(void)" (??0GameLoop@@QEAA@XZ) sin resolver al que se hace referencia en la función "public: __cdecl Scenes::Scenes(void)" (??0Scenes@@QEAA@XZ)
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SanchezJavier_CrespoAndrea_AA2_1\AA2_Fase2_GTA\x64\Debug\AA2_Fase2_GTA.exe : fatal error LNK1120: 1 externos sin resolver

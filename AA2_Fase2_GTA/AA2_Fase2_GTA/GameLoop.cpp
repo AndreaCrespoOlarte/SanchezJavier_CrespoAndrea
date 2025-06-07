@@ -33,11 +33,11 @@ void GameLoop::PlayGame()
 
             for ( int i = 0; i < pedestrianSFList.size(); i++ )
             {
-                if ( pedestrianSFList [ i ].canAttack ( player.GetPosition ( ) ) ) NPCAttack ( map , player );
+                if ( pedestrianSFList [ i ].CanAttack ( player.GetPosition ( ) ) ) NPCAttack ( map , player );
             }
             for ( int i = 0; i < pedestrianLSList.size(); i++ )
             {
-                if ( pedestrianLSList [ i ].canAttack ( player.GetPosition ( ) ) ) NPCAttack ( map , player );
+                if ( pedestrianLSList [ i ].CanAttack ( player.GetPosition ( ) ) ) NPCAttack ( map , player );
             }
             NPCMovement(map);
             lastTime = actualTime;
@@ -191,10 +191,11 @@ void GameLoop::PlayGame()
             spacePressedLastFrame = false;
             std::vector<Pedestrian>& pedestrianSFList = map.GetPedestrianSFList();
             std::vector<Pedestrian>& pedestrianLSList = map.GetPedestrianLSList();
-
+            BigSmoke& bg = map.GetBigSmoke ( );
             if (pedestrianSFList.empty() || pedestrianLSList.empty()) return;
 
             //Comprueba si hay un peaton adyacente iterando en ambas listas
+            
             for (int i = 0; i < pedestrianLSList.size(); i++)
             {
                 Pedestrian & p = pedestrianLSList [ i ];
@@ -205,18 +206,18 @@ void GameLoop::PlayGame()
                         attacked = true;
                         p.SetHP ( p.GetHP ( ) - 1 );
 
-                        std::cout << "PRINTEANDO VIDA: " << p.GetHP ( );
+                        std::cout << "PRINTEANDO VIDA: " << player.GetHP ( );
                     }
                     
                     if (p.GetHP() <= 0)
                     {
                         p.SetActive(false);
                         map.GetMap()[p.GetPosition().y][p.GetPosition().x] = EMPTY;
-                        //system("cls");
+                        system("cls");
                         map.GetMap()[p.GetPosition().y][p.GetPosition().x] = MONEY;
                         pedestrianLSList.erase(pedestrianLSList.begin() + i);
                         map.SpawnPedestrianToMap(1, pedestrianLSList, true);
-                        //UpdateMapScreen(map, player);
+                        UpdateMapScreen(map, player);
                         player.PrintMoney();
                     }
                     continue;
@@ -231,6 +232,7 @@ void GameLoop::PlayGame()
                     {
                         attacked = true;
                         p.SetHP ( p.GetHP ( ) - 1 );
+                        std::cout << "PRINTEANDO VIDA: " << player.GetHP ( );
                     }
 
                     if (p.GetHP() <= 0)
